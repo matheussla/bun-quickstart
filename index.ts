@@ -1,8 +1,14 @@
-const server = Bun.serve({
-  port: 3000,
-  fetch(req) {
-    return new Response("Hello World!");
-  },
-});
+import { serve } from "bun";
+ try {
+  serve({
+    port: Bun.env.port || 3000,
+    fetch(req, server) {
+      return new Response("Hello World");
+    },
+   });
+   console.log(`Listening on http://localhost:${Bun.env.port} ...`);
+ } catch (error) {
+   console.log(`Error: ${error}`);
+ }
 
-console.log(`Listening on http://localhost:${server.port} ...`);
+ 

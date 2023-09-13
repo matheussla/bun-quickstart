@@ -2,6 +2,11 @@
   "name": "bun-quickstart",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "start": "bun run index.ts",
+    "build": "bun build ./index.ts --outdir ./build",
+    "test": "bun test"
+  },
   "devDependencies": {
     "bun-types": "latest"
   },
